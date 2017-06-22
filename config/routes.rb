@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/stores' => 'stores#index'
 
   # create new store
-  get  '/stores/new' => 'stores#new'
+  get  '/stores/new' => 'stores#new', as: 'new_store'
   post '/stores'     => 'stores#create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
