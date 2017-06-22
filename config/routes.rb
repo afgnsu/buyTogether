@@ -10,5 +10,9 @@ Rails.application.routes.draw do
   # show a store
   get '/stores/:id' => 'stores#show', as: 'store'
 
+  # update a store
+  get   '/stores/:id/edit' => 'stores#edit', as: 'edit_store'
+  patch '/stores/:id'      => 'stores#update'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
