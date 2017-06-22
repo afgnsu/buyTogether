@@ -14,5 +14,8 @@ Rails.application.routes.draw do
   get   '/stores/:id/edit' => 'stores#edit', as: 'edit_store'
   patch '/stores/:id'      => 'stores#update'
 
+  # delete a store
+  delete '/stores/:id' => 'stores#destroy'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

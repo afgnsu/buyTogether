@@ -4,6 +4,7 @@ class StoresController < ApplicationController
   end
 
   def new
+    @store = Store.new
   end
 
   def create
@@ -26,6 +27,13 @@ class StoresController < ApplicationController
     @store = Store.find params[:id]
 
     @store.update store_params
+
+    redirect_to stores_path
+  end
+
+  def destroy
+    @store = Store.find params[:id]
+    @store.destroy
 
     redirect_to stores_path
   end
