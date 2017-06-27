@@ -45,9 +45,11 @@
             <div class="column is-4">
               <div class="card">
                 <div class="card-image">
-                  <figure class="image is-2by1">
-                    <%= image_tag item.image %>
-                  </figure>
+                  <%= link_to edit_store_item_path(@store, item) do %>
+                    <figure class="image is-2by1">
+                      <%= image_tag item.image %>
+                    </figure>
+                  <% end %>
                 </div>
                 <div class="card-content">
                   <div><%= item.name %></div>
