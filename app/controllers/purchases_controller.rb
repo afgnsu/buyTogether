@@ -7,6 +7,7 @@ class PurchasesController < ApplicationController
 
   def show
     @purchase = Purchase.find params[:id]
+    @order    = Order.find_by(user: current_user, purchase: @purchase)
   end
 
   def new
