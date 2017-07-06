@@ -15,8 +15,7 @@
       <!--  todo: 加上連結 -->
       <%= link_to '店家資訊', stores_path, class: 'nav-item is-tab is-active' %>
       <%= link_to '提議', new_purchase_path, class: 'nav-item is-tab' %>
-      <a class="nav-item is-tab">歷史資訊</a>
-
+      <%= link_to '歷史紀錄', history_path, class: 'nav-item is-tab' %>
       <%= link_to '帳戶管理', edit_user_registration_path, class: 'nav-item is-tab' %>
 
       <% if current_user %>

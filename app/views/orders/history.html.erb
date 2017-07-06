@@ -1,0 +1,38 @@
+<section class="section">
+  <div class="container">
+    <h1 class="title is-4">歷史紀錄</h1>
+
+    <% @orders.each do |order| %>
+      <h2 class="title is-6">
+        訂購
+        <%= order.purchase.store.name %>
+        （<%= order.purchase.end_time.strftime('%m/%d %H:%M') %> 截止）
+      </h2>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>商品名稱</th>
+            <th>價格</th>
+            <th>數量</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% order.ordered_items.each do |ordered_item| %>
+            <tr>
+              <td><%= ordered_item.item.name %></td>
+              <td><%= ordered_item.item.price %></td>
+              <td><%= ordered_item.quantity %></td>
+            </tr>
+          <% end %>
+
+          <tr>
+            <td class="title is-6 has-text-right" colspan="3">
+              總共 <%= order.total %> 元
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+</section>
