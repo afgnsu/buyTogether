@@ -24,3 +24,5 @@
 
 # Ignore carrierwave image files
 /public/uploads
+
+/config/fb.yml
